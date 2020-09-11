@@ -100,9 +100,9 @@ namespace ClubFromage
         }
 
         //Update statement
-        public void Update()
+        public void Update(string LaRequete)
         {
-            string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
+            string query = "UPDATE " + LaRequete + " ;";
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -123,9 +123,9 @@ namespace ClubFromage
         }
 
         //Delete statement
-        public void Delete()
+        public void Delete(string LaRequete)
         {
-            string query = "DELETE FROM tableinfo WHERE name='John Smith'";
+            string query = "DELETE FROM "+LaRequete+" ;";
 
             if (this.OpenConnection() == true)
             {
