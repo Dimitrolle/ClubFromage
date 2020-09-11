@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClubFromage", "ClubFromage.csproj", "{09822FB6-D8A4-4A30-B1A4-BAE592935EEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09822FB6-D8A4-4A30-B1A4-BAE592935EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09822FB6-D8A4-4A30-B1A4-BAE592935EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09822FB6-D8A4-4A30-B1A4-BAE592935EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09822FB6-D8A4-4A30-B1A4-BAE592935EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6BA11AFF-7938-4C6A-BA30-58BFA37EB5AA}
+	EndGlobalSection
+EndGlobal
