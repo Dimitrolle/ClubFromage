@@ -81,9 +81,9 @@ namespace ClubFromage
         }
 
         //Insert statement
-        public void Insert()
+        public void Insert(string LaRequete)
         {
-            string query = "INSERT INTO pays (id, nom) VALUES(2, 'Italie')";
+            string query = "INSERT INTO "+LaRequete+" ;";
 
             //open connection
             if (this.OpenConnection() == true)

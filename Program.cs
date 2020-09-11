@@ -9,7 +9,7 @@ namespace ClubFromage
         {
             Console.WriteLine("Bonjour !");
             DBAL db = new DBAL();
-            db.Insert();
+            db.Insert(Console.ReadLine());
             
 
             
