@@ -7,7 +7,11 @@ namespace ClubFromage
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Bonjour !");
+            Connection db = new Connection();
+            db.Insert();
+            
+
             
         }
     }

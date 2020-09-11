@@ -83,7 +83,7 @@ namespace ClubFromage
         //Insert statement
         public void Insert()
         {
-            string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
+            string query = "INSERT INTO pays (id, nom) VALUES(1, 'France')";
 
             //open connection
             if (this.OpenConnection() == true)
