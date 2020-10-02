@@ -25,10 +25,12 @@ namespace ClubFromage
 
                     foreach (var substring in substrings)
                     {
+                    
                         Console.WriteLine(substring);
                     }
 
                     compteur++;
+                 
                 }
 
                 fichier.Close();
