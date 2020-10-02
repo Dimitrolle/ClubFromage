@@ -8,8 +8,8 @@ namespace ClubFromage
         static void Main(string[] args)
         {
             Console.WriteLine("Bonjour !");
-            Connection db = new Connection();
-            db.Insert();
+            DBAL db = new DBAL();
+            db.Insert(Console.ReadLine());
             
 
             

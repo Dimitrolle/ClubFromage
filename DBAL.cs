@@ -8,7 +8,7 @@ using System.IO;
 
 namespace ClubFromage
 {
-    class Connection
+    class DBAL
     {
         private MySqlConnection connection;
         private string server;
@@ -17,7 +17,7 @@ namespace ClubFromage
         private string password;
 
         //Constructor
-        public Connection()
+        public DBAL()
         {
             Initialize();
         }
@@ -81,9 +81,9 @@ namespace ClubFromage
         }
 
         //Insert statement
-        public void Insert()
+        public void Insert(string LaRequete)
         {
-            string query = "INSERT INTO pays (id, nom) VALUES(2, 'Italie')";
+            string query = "INSERT INTO "+LaRequete+" ;";
 
             //open connection
             if (this.OpenConnection() == true)
@@ -100,9 +100,9 @@ namespace ClubFromage
         }
 
         //Update statement
-        public void Update()
+        public void Update(string LaRequete)
         {
-            string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
+            string query = "UPDATE " + LaRequete + " ;";
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -123,9 +123,9 @@ namespace ClubFromage
         }
 
         //Delete statement
-        public void Delete()
+        public void Delete(string LaRequete)
         {
-            string query = "DELETE FROM tableinfo WHERE name='John Smith'";
+            string query = "DELETE FROM "+LaRequete+" ;";
 
             if (this.OpenConnection() == true)
             {
