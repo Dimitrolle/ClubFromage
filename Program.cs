@@ -7,9 +7,9 @@ namespace ClubFromage
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Bonjour !");
-            DBAL db = new DBAL();
-            db.Insert(Console.ReadLine());
+            //Console.WriteLine("Bonjour !");
+            //DBAL db = new DBAL();
+            //db.Insert(Console.ReadLine());
             
 
             
