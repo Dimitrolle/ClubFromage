@@ -9,9 +9,9 @@ namespace ClubFromage
         static void Main(string[] args)
         {
 
-            DBAL MaBDD = new DBAL();
+            DBAL MaBDD = new DBAL();//nouvel instance DBAL
             Console.WriteLine("Bonjour !");
-            daoPays db = new daoPays(DBAL);
+            daoPays db = new daoPays(MaBDD); // nouvel instance dao avec un DBAL
             db.Insert(Console.ReadLine());
             db.Update(Console.ReadLine());
             db.Delete(Console.ReadLine());

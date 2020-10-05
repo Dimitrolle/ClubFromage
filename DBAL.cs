@@ -8,7 +8,7 @@ using System.IO;
 
 namespace ClubFromage
 {
-    class DBAL
+    public class DBAL
     {
         private MySqlConnection connection;
         private string server;
