@@ -13,7 +13,7 @@ namespace ClubFromage
             Console.WriteLine("Bonjour !");
             daoPays daoP = new daoPays(MaBDD); // nouvel instance dao avec un DBAL
             Pays p3 = new Pays(3,"Chine");
-            daoP.Insert(p3);
+            //daoP.Insert(p3);
             //p3.Nom = "Japon";
             //daoP.Update(p3);
             //daoP.Delete(p3);
