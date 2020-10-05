@@ -83,7 +83,9 @@ namespace ClubFromage
         //Insert statement
         public void Insert(string LaRequete)
         {
-            string query = "INSERT INTO "+LaRequete+" ;";
+           
+
+            string query = LaRequete;
 
             //open connection
             if (this.OpenConnection() == true)
@@ -102,7 +104,7 @@ namespace ClubFromage
         //Update statement
         public void Update(string LaRequete)
         {
-            string query = "UPDATE " + LaRequete + " ;";
+            string query = LaRequete ;
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -125,7 +127,7 @@ namespace ClubFromage
         //Delete statement
         public void Delete(string LaRequete)
         {
-            string query = "DELETE FROM "+LaRequete+" ;";
+            string query = LaRequete;
 
             if (this.OpenConnection() == true)
             {

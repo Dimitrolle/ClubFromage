@@ -8,35 +8,16 @@ namespace ClubFromage
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Bonjour !");
-            //DBAL db = new DBAL();
-            //db.Insert(Console.ReadLine());
 
-            
-                int compteur = 0;
-                string ligne;
-                Char caractere = ';';
-            //sans CSVhelper
-                StreamReader fichier = new StreamReader(@"D:\Dimitri DEFRESNE\fichier csv\Pays.csv");
+            DBAL MaBDD = new DBAL();
+            Console.WriteLine("Bonjour !");
+            daoPays db = new daoPays(DBAL);
+            db.Insert(Console.ReadLine());
+            db.Update(Console.ReadLine());
+            db.Delete(Console.ReadLine());
 
-                while ((ligne = fichier.ReadLine()) != null)
-                {
-                    String[] substrings = ligne.Split(caractere);
 
-                    foreach (var substring in substrings)
-                    {
-                    
-                        Console.WriteLine(substring);
-                    }
+        }
 
-                    compteur++;
-                 
-                }
-
-                fichier.Close();
-                System.Console.WriteLine("Nombre de lignes : {0}.", compteur);
-            }
-
-        
     }
 }
