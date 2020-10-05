@@ -23,13 +23,13 @@ public class daoPays
 
     public void Update(Pays Unpays)
     {
-        _mydbal.Insert("UPDATE pays set id = " + Unpays.Id+", nom = '"+Unpays.Nom+"' where  id = "+Unpays.Id + " ;"); ;
+        _mydbal.Update("UPDATE pays set id = " + Unpays.Id+", nom = '"+Unpays.Nom+"' where  id = "+Unpays.Id + " ;"); ;
 
     }
 
     public void Delete(Pays Unpays)
     {
-        _mydbal.Insert("DELETE FROM pays where id = " + Unpays.Id + " ;");
+        _mydbal.Delete("DELETE FROM pays where id = " + Unpays.Id + " ;");
 
     }
     
