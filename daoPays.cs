@@ -1,30 +1,34 @@
 ﻿using ClubFromage;
 using Org.BouncyCastle.Asn1.Cmp;
+using Org.BouncyCastle.Bcpg;
 using System;
 
 public class daoPays
 {
+    private DBAL _connectionBDD;
 
-
-	private DBAL _connectionDBAL = new DBAL() ;
-
-	public void Insert(string larequete)
+    public daoPays(DBAL BDD)
     {
-		_connectionDBAL.Insert("INSERT INTO pays " + larequete + " ;" );
+        _connectionBDD = BDD;
+    }
+
+    public void Insert(string larequete)
+    {
+		_connectionBDD.Insert("INSERT INTO pays " + larequete + " ;" );
         
     }
 
     public void Update(string larequete)
     {
-        _connectionDBAL.Insert("UPDATE " + larequete + " ;"); ;
+        _connectionBDD.Insert("UPDATE " + larequete + " ;"); ;
 
     }
 
     public void Delete(string larequete)
     {
-        _connectionDBAL.Insert("DELETE FROM " + larequete + " ;");
+        _connectionBDD.Insert("DELETE FROM " + larequete + " ;");
 
     }
-
+    
 
 }

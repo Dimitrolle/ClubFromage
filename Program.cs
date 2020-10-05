@@ -7,12 +7,13 @@ namespace ClubFromage
     {
         static void Main(string[] args)
         {
-            DBAL MaBDD = new DBAL();
-            Console.WriteLine("Bonjour !");
-            daoPays db = new daoPays(DBAL);
-            db.Insert(Console.ReadLine());
-            db.Update(Console.ReadLine());
-            db.Delete(Console.ReadLine());
+            DBAL MaBDD = new DBAL(); //instanciation d'un nouvel connection BDD
+            daoPays db = new daoPays(MaBDD); //
+
+            Console.WriteLine("Bonjour !"); //messag de bienvenue
+            db.Insert(Console.ReadLine()); //insérer des données dans la BDD
+            db.Update(Console.ReadLine()); //mise à jour d'un donnée
+            db.Delete(Console.ReadLine()); //supprimé les données
 
 
         }
