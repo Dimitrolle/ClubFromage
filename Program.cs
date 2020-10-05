@@ -16,7 +16,7 @@ namespace ClubFromage
                 int compteur = 0;
                 string ligne;
                 Char caractere = ';';
-
+            //sans CSVhelper
                 StreamReader fichier = new StreamReader(@"D:\Dimitri DEFRESNE\fichier csv\Pays.csv");
 
                 while ((ligne = fichier.ReadLine()) != null)
