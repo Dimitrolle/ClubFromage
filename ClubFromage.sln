@@ -5,10 +5,12 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubFromage", "ClubFromage.csproj", "{09822FB6-D8A4-4A30-B1A4-BAE592935EEC}"
 EndProject
+
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D433C9B0-4A74-439B-B7B1-D06E064F8DF1}"
 	ProjectSection(SolutionItems) = preProject
 		Class1.cs = Class1.cs
 		Pays.cs = Pays.cs
+
 	EndProjectSection
 EndProject
 Global
