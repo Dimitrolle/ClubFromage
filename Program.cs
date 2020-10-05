@@ -7,12 +7,14 @@ namespace ClubFromage
     {
         static void Main(string[] args)
         {
+            DBAL MaBDD = new DBAL();
             Console.WriteLine("Bonjour !");
-            DBAL db = new DBAL();
+            daoPays db = new daoPays(DBAL);
             db.Insert(Console.ReadLine());
-            
+            db.Update(Console.ReadLine());
+            db.Delete(Console.ReadLine());
 
-            
+
         }
     }
 }
