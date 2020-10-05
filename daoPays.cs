@@ -20,13 +20,13 @@ public class daoPays
 
     public void Update(string larequete)
     {
-        _connectionBDD.Insert("UPDATE " + larequete + " ;"); ;
+        _connectionBDD.Insert("UPDATE pays set " + larequete + " ;"); ;
 
     }
 
-    public void Delete(string larequete)
+    public void Delete(string condition)
     {
-        _connectionBDD.Insert("DELETE FROM " + larequete + " ;");
+        _connectionBDD.Insert("DELETE FROM pays where " + condition + " ;");
 
     }
     
