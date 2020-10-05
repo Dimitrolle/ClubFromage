@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System.IO;
 using System;
 
 namespace ClubFromage
@@ -7,6 +8,7 @@ namespace ClubFromage
     {
         static void Main(string[] args)
         {
+
             DBAL MaBDD = new DBAL();
             Console.WriteLine("Bonjour !");
             daoPays db = new daoPays(DBAL);
@@ -16,5 +18,6 @@ namespace ClubFromage
 
 
         }
+
     }
 }
