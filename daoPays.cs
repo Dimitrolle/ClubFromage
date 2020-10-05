@@ -5,28 +5,31 @@ using System;
 
 public class daoPays
 {
-    private DBAL _connectionBDD;
+    private DBAL _mydbal;
+    
 
     public daoPays(DBAL BDD)
     {
-        _connectionBDD = BDD;
+       
+        _mydbal = BDD;
     }
 
-    public void Insert(string larequete)
+    public void Insert(Pays Unpays)
+
     {
-		_connectionBDD.Insert("INSERT INTO pays " + larequete + " ;" );
+        _mydbal.Insert("INSERT INTO pays (id,nom) values (" + Unpays.Id +", '"+ Unpays.Nom + "');" );
         
     }
 
-    public void Update(string larequete)
+    public void Update(Pays Unpays)
     {
-        _connectionBDD.Insert("UPDATE pays set " + larequete + " ;"); ;
+        _mydbal.Insert("UPDATE pays set id = " + Unpays.Id+", nom = '"+Unpays.Nom+"' where  id = "+Unpays.Id + " ;"); ;
 
     }
 
-    public void Delete(string condition)
+    public void Delete(Pays Unpays)
     {
-        _connectionBDD.Insert("DELETE FROM pays where " + condition + " ;");
+        _mydbal.Insert("DELETE FROM pays where id = " + Unpays.Id + " ;");
 
     }
     

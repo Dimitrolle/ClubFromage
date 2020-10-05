@@ -11,14 +11,20 @@ namespace ClubFromage
 
             DBAL MaBDD = new DBAL();//nouvel instance DBAL
             Console.WriteLine("Bonjour !");
-            daoPays db = new daoPays(MaBDD); // nouvel instance dao avec un DBAL
-            db.Insert(Console.ReadLine());
+            daoPays daoP = new daoPays(MaBDD); // nouvel instance dao avec un DBAL
+            //daoP.Insert(Console.ReadLine());
+            //Console.WriteLine("insert fait");
+            //daoP.Update(Console.ReadLine());
+            //Console.WriteLine("update fait");
+            //daoP.Delete(Console.ReadLine());
+            //Console.WriteLine("delete fait");
+            daoFromage daoF = new daoFromage(MaBDD, daoP);
+            daoF.Insert(Console.ReadLine());
             Console.WriteLine("insert fait");
-            db.Update(Console.ReadLine());
+            daoF.Update(Console.ReadLine());
             Console.WriteLine("update fait");
-            db.Delete(Console.ReadLine());
+            daoF.Delete(Console.ReadLine());
             Console.WriteLine("delete fait");
-
 
         }
 
