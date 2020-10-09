@@ -21,7 +21,7 @@ public class daoFromage
 
     public void Update(Fromage UnFromage)
     {
-        _mydbal.Insert("UPDATE fromage set id = " + UnFromage.Id + ", id_pays_origin = " + UnFromage.Idpays + ", nom = " + UnFromage.Nom + ",creation = " + UnFromage.Creation + ", image = " + UnFromage.Image + " Where id = " + UnFromage.Id + " ;");
+        _mydbal.Insert("UPDATE fromage set id = " + UnFromage.Id + ", id_pays_origin = " + UnFromage.Idpays.Id + ", nom = " + UnFromage.Nom + ",creation = '" + UnFromage.Creation + "', image = " + UnFromage.Image + " Where id = " + UnFromage.Id + " ;");
 
     }
 

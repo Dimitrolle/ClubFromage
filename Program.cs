@@ -15,10 +15,8 @@ namespace ClubFromage
             daoFromage daoF = new daoFromage(MaBDD, daoP);
             Pays p3 = new Pays(3,"Chine");
             Fromage fromage1 = new Fromage(1, p3, "tome", "2010-03-19", "ttt");
-
-            daoF.Insert(fromage1);
-           // daoF.Delete(fromage1);
-
+            
+            //daoF.Insert(fromage1);
 
             //daoP.Insert(p3);
             //daoP.Update(p3);
