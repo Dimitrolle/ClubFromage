@@ -6,8 +6,11 @@ using System.Diagnostics;
 using System.IO;
 
 
-namespace ClubFromage
+namespace Model.data
 {
+
+
+
     public class DBAL
     {
         private MySqlConnection connection;
@@ -54,7 +57,7 @@ namespace ClubFromage
                 switch (ex.Number)
                 {
                     case 0:
-                        Console.WriteLine("Cannot connect to server.  Contact administrator"); 
+                        Console.WriteLine("Cannot connect to server.  Contact administrator");
                         break;
 
                     case 1045:
@@ -83,7 +86,7 @@ namespace ClubFromage
         //Insert statement
         public void Insert(string LaRequete)
         {
-           
+
 
             string query = LaRequete;
 
@@ -104,7 +107,7 @@ namespace ClubFromage
         //Update statement
         public void Update(string LaRequete)
         {
-            string query = LaRequete ;
+            string query = LaRequete;
 
             //Open connection
             if (this.OpenConnection() == true)

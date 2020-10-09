@@ -5,9 +5,11 @@ using System;
 using System.IO;
 using System.Globalization;
 using CsvHelper;
+using Model.data;
+namespace Model.data
+{
 
-
-public class daoPays
+    public class daoPays
 {
     private DBAL _mydbal;
     
@@ -60,4 +62,5 @@ public class daoPays
 
 
 
+}
 }

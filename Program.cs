@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System.IO;
 using System;
+using Model.buisness;
+using Model.data;
 
 namespace ClubFromage
 {
