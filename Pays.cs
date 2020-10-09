@@ -9,9 +9,13 @@ public class Pays
 		_id = UnID;
 		_nom = NomPays;
 
-
+       
 	}
-
-    public int Id { get => _id; set => _id = value; }
+	public Pays()
+	{
+		_id = 0;
+		_nom = "";
+	}
+	public int Id { get => _id; set => _id = value; }
     public string Nom { get => _nom; set => _nom = value; }
 }
