@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System.IO;
 using System;
+using Model.buisness;
+using Model.data;
 
 namespace ClubFromage
 {
@@ -13,8 +15,11 @@ namespace ClubFromage
             Console.WriteLine("Bonjour !");
             daoPays daoP = new daoPays(MaBDD); // nouvel instance dao avec un DBAL
             daoFromage daoF = new daoFromage(MaBDD, daoP);
-            Pays p3 = new Pays(3,"Chine");
-            Fromage fromage1 = new Fromage(1, p3, "tome", "2010-03-19", "ttt");
+            daoP.MainCSV();
+
+           
+           // Pays p3 = new Pays(3,"Chine");
+           // Fromage fromage1 = new Fromage(1, p3, "tome", "2010-03-19", "ttt");
             
             //daoF.Insert(fromage1);
 

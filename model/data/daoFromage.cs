@@ -1,5 +1,10 @@
 ﻿using ClubFromage;
 using System;
+using Model.data;
+using Model.buisness;
+namespace Model.data
+{
+
 
 public class daoFromage
 {
@@ -31,4 +36,5 @@ public class daoFromage
 
     }
 
+}
 }
