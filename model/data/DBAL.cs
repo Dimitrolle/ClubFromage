@@ -4,7 +4,7 @@ using System.Text;
 using MySql.Data.MySqlClient;
 using System.Diagnostics;
 using System.IO;
-
+using System.Data;
 
 namespace Model.data
 {
@@ -282,6 +282,17 @@ namespace Model.data
             catch (IOException ex)
             {
                 Console.WriteLine("Error , unable to Restore!");
+            }
+        }
+
+        private DataSet RQuery(string query)
+        {
+            DataSet dataset = new DataSet();
+            if (this.OpenConnection() == true)
+            {
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+                adapter.Fill(dataset);
+                return dataset;
             }
         }
     }
