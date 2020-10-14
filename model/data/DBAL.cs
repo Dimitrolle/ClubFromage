@@ -285,15 +285,19 @@ namespace Model.data
             }
         }
 
-        private DataSet RQuery(string query)
+
+
+        public DataSet RQuery(string query)
         {
             DataSet dataset = new DataSet();
             if (this.OpenConnection() == true)
             {
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
                 adapter.Fill(dataset);
-                return dataset;
+                
+                
             }
+            return dataset;
         }
     }
 }
