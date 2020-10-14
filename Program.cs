@@ -18,15 +18,30 @@ namespace ClubFromage
             daoPays daoP = new daoPays(MaBDD); // nouvel instance dao avec un DBAL
             daoFromage daoF = new daoFromage(MaBDD, daoP);
 
+
+
+            //--------------------------------------------------------------------------
+            //DataTable Selectbyfield
+            //foreach (DataRow dataR in MaBDD.SelectByField("pays", "id = 10").Rows)
+            //{
+            //    Console.WriteLine(dataR["nom"] + " " + dataR["id"]);
+            //}
+            //--------------------------------------------------------------------------
+            //DataTable selectAll
+            //foreach  (DataRow dataR in MaBDD.SelectALL("pays").Rows)
+            //{
+            //    Console.WriteLine(dataR["nom"]+" "+ dataR["id"]);
+            //}
+            //--------------------------------------------------------------------------
             //DataSet RQUERY
             //DataSet dataS = MaBDD.RQuery("Select * from pays ;"); //instancie un objet dataset (bdd) grace a ma MaBDD.query
             //foreach (DataRow Undata in dataS.Tables[0].Rows)
             //{
             //    //pour un objet datarow qui sera dans Undata dans la tables dataS a chaque ligne
-                    
+
             //        Console.WriteLine(Undata["id"]+ " "+ Undata["nom"]);
-                   
-                
+
+
 
             //}
 

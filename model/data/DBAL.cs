@@ -287,17 +287,32 @@ namespace Model.data
 
 
 
-        public DataSet RQuery(string query)
+        private DataSet RQuery(string query)
         {
             DataSet dataset = new DataSet();
             if (this.OpenConnection() == true)
             {
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
                 adapter.Fill(dataset);
-                
-                
+
+
             }
             return dataset;
         }
+
+        public DataTable SelectALL(string table)
+        {
+
+            return this.RQuery("select * from " + table+";").Tables[0];
+
+        }
+
+        public DataTable SelectByField(string UneTable, string fieldTestCondition)
+        {
+            return this.RQuery("select * from " + UneTable+ " where "+fieldTestCondition+";").Tables[0];
+        }
+
+        public DataRow SelectByID
     }
+
 }
