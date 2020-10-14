@@ -312,7 +312,10 @@ namespace Model.data
             return this.RQuery("select * from " + UneTable+ " where "+fieldTestCondition+";").Tables[0];
         }
 
-        public DataRow SelectByID
+        public DataRow SelectByID(string Unetable,string UnId)
+        {
+            return this.RQuery("select * from " + Unetable + " where id=" + UnId + ";").Tables[0].Rows[0];
+        }
     }
 
 }

@@ -19,7 +19,10 @@ namespace ClubFromage
             daoFromage daoF = new daoFromage(MaBDD, daoP);
 
 
-
+            //Datarow SelectbyID
+            DataRow DataR = MaBDD.SelectByID("pays", "165");
+                Console.WriteLine(DataR["nom"]);
+           
             //--------------------------------------------------------------------------
             //DataTable Selectbyfield
             //foreach (DataRow dataR in MaBDD.SelectByField("pays", "id = 10").Rows)
