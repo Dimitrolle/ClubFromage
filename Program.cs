@@ -17,9 +17,10 @@ namespace ClubFromage
             Console.WriteLine("Bonjour !");
             daoPays daoP = new daoPays(MaBDD); // nouvel instance dao avec un DBAL
             daoFromage daoF = new daoFromage(MaBDD, daoP);
-           
 
-
+            //---------------------------------------------------------------------------
+            //selectbyname
+            //daoP.selectByName("vietnam");
             //-----------------------------------------------------------------------
             //list Pays selectALL
             //foreach (Pays unpays in daoP.SelectAll())

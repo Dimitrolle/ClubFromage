@@ -67,13 +67,17 @@ namespace Model.data
             foreach (DataRow DataR in _mydbal.SelectALL("pays").Rows)
             {
                 Console.WriteLine(DataR["id"] + " " + DataR["nom"]);
-                lePays.Add(new Pays(int.Parse(DataR["id"].ToString()), (DataR["nom"].ToString())));
+                lePays.Add(new Pays((int)DataR["id"],(string) DataR["nom"]));
                 Console.WriteLine("ajouter");
             }
             return lePays;
         }
 
-        public Pays
+        public Pays selectByName(string UnPays)
+        {
+            DataRow dr = _mydbal.SelectByField("pays", "nom like '" + UnPays + "'").Rows[0];
+            return new Pays((int)dr["id"],(string)dr["nom"]);
+        }
 
 
 
