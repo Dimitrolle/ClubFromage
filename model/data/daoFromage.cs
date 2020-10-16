@@ -82,7 +82,17 @@ public class daoFromage
 
             return lesfromage;
         }
+        public Fromage SelectByName(string UnFromage)
+        {
+            DataRow DataR = _mydbal.SelectByField("fromage", "nom like '" + UnFromage + "'").Rows[0];
+            return new Fromage(
+                (int)DataR["id"],
+                _myDaoPays.selectByID((int)DataR["pays_origine_id"]),
+                (string)DataR["nom"],
+                    (DateTime)DataR["creation"],
+                    (string)DataR["image"]
+                );
+        }
 
-
-}
+    }
 }
