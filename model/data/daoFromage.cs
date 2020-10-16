@@ -44,24 +44,7 @@ namespace Model.data
             _mydbal.Insert("DELETE FROM fromage where " + UnFromage.Id + " ;");
 
         }
-        public void MainCSV()
-        {
-            using (var reader = new StreamReader("fromages.csv"))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-            {
-                csv.Configuration.Delimiter = ";";
-                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
-                //var records = csv.GetRecords<Pays>();
-                var record = new Fromage();
-                var records = csv.EnumerateRecords(record);
-
-                foreach (var item in records)
-                {
-                    this.Insert(item);
-                }
-            }
-            Console.WriteLine("importation de fromage réussit");
-        }
+        
 
         public List<Fromage> SelectAll()
         {
@@ -105,5 +88,24 @@ namespace Model.data
                  );
 
         }
+        public void MainCSV()
+        {
+            using (var reader = new StreamReader("fromages.csv"))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                csv.Configuration.Delimiter = ";";
+                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
+
+                var record = new Fromage();
+                var records = csv.EnumerateRecords(record);
+
+                foreach (var item in records)
+                {
+                    this.Insert(item);
+                }
+            }
+            Console.WriteLine("importation de fromage réussit");
+        }
+
     }
 }
