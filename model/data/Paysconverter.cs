@@ -21,9 +21,9 @@ namespace Model.data
                 text.Substring(text.IndexOf(';') + 1));
         }
 
-        public string ConvertToString(object value)
+        public string ConvertToString(Pays Unpays)
         {
-            return Paysconverter.SerializeObject(value);
+            return Unpays.Id+";"+Unpays.Nom;
         }
     }
 }
