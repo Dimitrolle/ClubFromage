@@ -18,20 +18,27 @@ namespace ClubFromage
             daoPays daoP = new daoPays(MaBDD); // nouvel instance dao avec un DBAL
             daoFromage daoF = new daoFromage(MaBDD, daoP);
 
+
+
+
+
+
+            //selectByID
+            //Console.WriteLine(daoP.selectByID(110).Nom);
             //---------------------------------------------------------------------------
             //selectbyname
-            //daoP.selectByName("vietnam");
+            //Console.WriteLine(daoP.selectByName("vietnam").Nom);
             //-----------------------------------------------------------------------
             //list Pays selectALL
             //foreach (Pays unpays in daoP.SelectAll())
             //{
-               
+
             //}
 
             //Datarow SelectbyID
-           // DataRow DataR = MaBDD.SelectByID("pays", "165");
-              //  Console.WriteLine(DataR["nom"]);
-           
+            // DataRow DataR = MaBDD.SelectByID("pays", 165);
+            //  Console.WriteLine(DataR["nom"]);
+
             //--------------------------------------------------------------------------
             //DataTable Selectbyfield
             //foreach (DataRow dataR in MaBDD.SelectByField("pays", "id = 10").Rows)

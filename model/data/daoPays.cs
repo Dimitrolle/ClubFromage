@@ -79,6 +79,11 @@ namespace Model.data
             return new Pays((int)dr["id"],(string)dr["nom"]);
         }
 
+        public Pays selectByID(int IDPays)
+        {
+            DataRow dr = _mydbal.SelectByID("pays",IDPays );
+            return new Pays((int)dr["id"], (string)dr["nom"]);
+        }
 
 
 

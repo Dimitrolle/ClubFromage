@@ -2,6 +2,10 @@
 using System;
 using Model.data;
 using Model.buisness;
+using System.Collections.Generic;
+using System.Data;
+using CsvHelper.TypeConversion;
+
 namespace Model.data
 {
 
@@ -35,6 +39,26 @@ public class daoFromage
         _mydbal.Insert("DELETE FROM fromage where " + UnFromage.Id + " ;");
 
     }
+
+    public List<Fromage>SelectAll()
+        {
+            List<Fromage> lesfromage = new List<Fromage>();
+            foreach (DataRow DataR in _mydbal.SelectALL("fromage").Rows)
+            {
+                lesfromage.Add(new Fromage
+                    (
+                    (int)DataR["id"],
+                    _myDaoPays.selectByID((int)DataR["pays_origin_id"]),
+                    (string)DataR["nom"],
+                    (string)DataR["creation"],
+                    (string)DataR["image"]
+                    )
+                    );
+              
+            }
+
+            return lesfromage;
+        }
 
 }
 }
