@@ -12,7 +12,7 @@ using System.Data;
 namespace Model.data
 {
     
-    public class Paysconverter : DefaultTypeConverter
+    public class Paysconverter<T> : DefaultTypeConverter
     {
         public Pays ConvertFromString(string text)
         {
