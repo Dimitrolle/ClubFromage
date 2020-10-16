@@ -1,5 +1,10 @@
 ﻿using ClubFromage;
+using Org.BouncyCastle.Asn1.Cmp;
+using Org.BouncyCastle.Bcpg;
 using System;
+using System.IO;
+using System.Globalization;
+using CsvHelper;
 using Model.data;
 using Model.buisness;
 using System.Collections.Generic;
@@ -39,8 +44,25 @@ public class daoFromage
         _mydbal.Insert("DELETE FROM fromage where " + UnFromage.Id + " ;");
 
     }
+        public void MainCSV()
+        {
+            using (var reader = new StreamReader("fromage.csv"))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                csv.Configuration.Delimiter = ";";
+                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
+                //var records = csv.GetRecords<Pays>();
+                var record = new Fromage();
+                var records = csv.EnumerateRecords(record);
 
-    public List<Fromage>SelectAll()
+                foreach (var item in records)
+                {
+                    this.Insert(item);
+                }
+            }
+        }
+
+        public List<Fromage>SelectAll()
         {
             List<Fromage> lesfromage = new List<Fromage>();
             foreach (DataRow DataR in _mydbal.SelectALL("fromage").Rows)
