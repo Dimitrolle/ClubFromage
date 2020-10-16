@@ -17,21 +17,38 @@ namespace ClubFromage
             Console.WriteLine("Bonjour !");
             daoPays daoP = new daoPays(MaBDD); // nouvel instance dao avec un DBAL
             daoFromage daoF = new daoFromage(MaBDD, daoP);
+            //daoF.MainCSV();
 
+            //------------------------------------------------------------
+            //selectbyID dao fromage
+            Console.WriteLine(daoF.SelectByID(1).Nom);
+            //-----------------------------------------------------------
+            //SelectByName dao fromage
+            //Console.WriteLine(daoF.SelectByName("fromage de chèvre").Id);
+            //-----------------------------------------------------------
+            //list Fromage selectALl
+            //daoF.SelectAll();
+            //foreach (Fromage item in daoF.SelectAll())
+            //{
+            //    Console.WriteLine(item.Nom);
+            //}
+            //----------------------------------------------------
+            //selectByID
+            //Console.WriteLine(daoP.selectByID(110).Nom);
             //---------------------------------------------------------------------------
             //selectbyname
-            //daoP.selectByName("vietnam");
+            //Console.WriteLine(daoP.selectByName("vietnam").Nom);
             //-----------------------------------------------------------------------
             //list Pays selectALL
             //foreach (Pays unpays in daoP.SelectAll())
             //{
-               
+            // Console.WriteLine(unpays.Nom);
             //}
 
             //Datarow SelectbyID
-           // DataRow DataR = MaBDD.SelectByID("pays", "165");
-              //  Console.WriteLine(DataR["nom"]);
-           
+            // DataRow DataR = MaBDD.SelectByID("pays", 165);
+            //  Console.WriteLine(DataR["nom"]);
+
             //--------------------------------------------------------------------------
             //DataTable Selectbyfield
             //foreach (DataRow dataR in MaBDD.SelectByField("pays", "id = 10").Rows)
@@ -73,7 +90,7 @@ namespace ClubFromage
             //daoP.Update(p3);
             //daoP.Delete(p3);
 
-
+            Console.WriteLine("------- FIN -------");
         }
 
     }
