@@ -46,7 +46,7 @@ public class daoFromage
     }
         public void MainCSV()
         {
-            using (var reader = new StreamReader("fromage.csv"))
+            using (var reader = new StreamReader("fromages.csv"))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
                 csv.Configuration.Delimiter = ";";
@@ -60,6 +60,7 @@ public class daoFromage
                     this.Insert(item);
                 }
             }
+            Console.WriteLine("importation de fromage réussit");
         }
 
         public List<Fromage>SelectAll()
@@ -70,9 +71,9 @@ public class daoFromage
                 lesfromage.Add(new Fromage
                     (
                     (int)DataR["id"],
-                    _myDaoPays.selectByID((int)DataR["pays_origin_id"]),
+                    _myDaoPays.selectByID((int)DataR["pays_origine_id"]),
                     (string)DataR["nom"],
-                    (string)DataR["creation"],
+                    (DateTime)DataR["creation"],
                     (string)DataR["image"]
                     )
                     );
@@ -81,6 +82,7 @@ public class daoFromage
 
             return lesfromage;
         }
+
 
 }
 }

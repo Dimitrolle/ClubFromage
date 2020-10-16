@@ -294,6 +294,7 @@ namespace Model.data
             {
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
                 adapter.Fill(dataset);
+                connection.Close();
 
 
             }
