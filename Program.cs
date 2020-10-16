@@ -18,11 +18,13 @@ namespace ClubFromage
             daoPays daoP = new daoPays(MaBDD); // nouvel instance dao avec un DBAL
             daoFromage daoF = new daoFromage(MaBDD, daoP);
             //daoF.MainCSV();
-            //selectbyID dao fromage
 
+            //------------------------------------------------------------
+            //selectbyID dao fromage
+            Console.WriteLine(daoF.SelectByID(1).Nom);
             //-----------------------------------------------------------
             //SelectByName dao fromage
-            Console.WriteLine(daoF.SelectByName("fromage de chèvre").Id);
+            //Console.WriteLine(daoF.SelectByName("fromage de chèvre").Id);
             //-----------------------------------------------------------
             //list Fromage selectALl
             //daoF.SelectAll();

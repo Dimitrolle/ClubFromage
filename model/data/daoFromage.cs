@@ -15,35 +15,35 @@ namespace Model.data
 {
 
 
-public class daoFromage
-{
-    private DBAL _mydbal;
-    private daoPays _myDaoPays;
-
-    public daoFromage(DBAL BDD, daoPays DaoPays)
+    public class daoFromage
     {
-        _mydbal = BDD;
-        _myDaoPays = DaoPays;
-    }
+        private DBAL _mydbal;
+        private daoPays _myDaoPays;
 
-    public void Insert(Fromage Unfromage)
-    {
-        Console.WriteLine("INSERT INTO fromage (id,pays_origine_id,nom,creation,image) values (" + Unfromage.Id + ", " + Unfromage.Idpays.Id + ", '" + Unfromage.Nom + "', " + Unfromage.Creation + ", '" + Unfromage.Image + "') ;");
-        _mydbal.Insert("INSERT INTO fromage (id,pays_origine_id,nom,creation,image) values (" + Unfromage.Id + ", " + Unfromage.Idpays.Id + ", '" + Unfromage.Nom + "', '" + Unfromage.Creation + "', '" + Unfromage.Image + "') ;");
+        public daoFromage(DBAL BDD, daoPays DaoPays)
+        {
+            _mydbal = BDD;
+            _myDaoPays = DaoPays;
+        }
 
-    }
+        public void Insert(Fromage Unfromage)
+        {
+            Console.WriteLine("INSERT INTO fromage (id,pays_origine_id,nom,creation,image) values (" + Unfromage.Id + ", " + Unfromage.Idpays.Id + ", '" + Unfromage.Nom + "', " + Unfromage.Creation + ", '" + Unfromage.Image + "') ;");
+            _mydbal.Insert("INSERT INTO fromage (id,pays_origine_id,nom,creation,image) values (" + Unfromage.Id + ", " + Unfromage.Idpays.Id + ", '" + Unfromage.Nom + "', '" + Unfromage.Creation + "', '" + Unfromage.Image + "') ;");
 
-    public void Update(Fromage UnFromage)
-    {
-        _mydbal.Insert("UPDATE fromage set id = " + UnFromage.Id + ", id_pays_origin = " + UnFromage.Idpays.Id + ", nom = " + UnFromage.Nom + ",creation = '" + UnFromage.Creation + "', image = " + UnFromage.Image + " Where id = " + UnFromage.Id + " ;");
+        }
 
-    }
+        public void Update(Fromage UnFromage)
+        {
+            _mydbal.Insert("UPDATE fromage set id = " + UnFromage.Id + ", id_pays_origin = " + UnFromage.Idpays.Id + ", nom = " + UnFromage.Nom + ",creation = '" + UnFromage.Creation + "', image = " + UnFromage.Image + " Where id = " + UnFromage.Id + " ;");
 
-    public void Delete(Fromage UnFromage)
-    {
-        _mydbal.Insert("DELETE FROM fromage where " + UnFromage.Id + " ;");
+        }
 
-    }
+        public void Delete(Fromage UnFromage)
+        {
+            _mydbal.Insert("DELETE FROM fromage where " + UnFromage.Id + " ;");
+
+        }
         public void MainCSV()
         {
             using (var reader = new StreamReader("fromages.csv"))
@@ -63,7 +63,7 @@ public class daoFromage
             Console.WriteLine("importation de fromage réussit");
         }
 
-        public List<Fromage>SelectAll()
+        public List<Fromage> SelectAll()
         {
             List<Fromage> lesfromage = new List<Fromage>();
             foreach (DataRow DataR in _mydbal.SelectALL("fromage").Rows)
@@ -77,7 +77,7 @@ public class daoFromage
                     (string)DataR["image"]
                     )
                     );
-              
+
             }
 
             return lesfromage;
@@ -93,6 +93,17 @@ public class daoFromage
                     (string)DataR["image"]
                 );
         }
+        public Fromage SelectByID(int IDPays)
+        {
+            DataRow DataR = _mydbal.SelectByID("fromage", IDPays);
+            return new Fromage(
+                 (int)DataR["id"],
+                 _myDaoPays.selectByID((int)DataR["pays_origine_id"]),
+                 (string)DataR["nom"],
+                     (DateTime)DataR["creation"],
+                     (string)DataR["image"]
+                 );
 
+        }
     }
 }
